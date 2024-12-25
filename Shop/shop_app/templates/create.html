@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %} Добавление товаров {% endblock %}
+
+{% block content %}
+<br>
+<h4> Добавить товар</h4>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.name }}<br>
+    {{ form.description }}<br>
+    {{ form.price }}<br>
+    {{ form.quantity }}<br>    
+    {{ form.category }}<br>  
+    {{ form.date_of_receipt }}<br>    
+    <button type="submit" class="btn btn-primary" name="button">Добавить</button>
+    <a href="{% url 'index' %}" class="btn btn-secondary">Назад </a>
+    <span>{{ error }}</span>
+ </form>
+{% endblock %}
